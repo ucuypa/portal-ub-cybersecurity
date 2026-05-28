@@ -6,14 +6,14 @@
         
         <div class="info-card d-flex align-items-center m-4 p-3 shadow">
           
-          <img src="@/assets/images/qr-placeholder.png" alt="QR Code" class="qr-code me-3 bg-white p-1">
+          <div class="qr-placeholder me-3"></div>
           
           <div class="text-white">
-            <h6 class="mb-1 fw-bold">Virtual Museum of Majapahit</h6>
-            <p class="mb-1 text-subtitle">Virtual Museum of Majapahit</p>
-            <p class="mb-0 text-credit text-light">
-              Sahiruddin, M.A., Ph.D. - Fakultas Ilmu Budaya<br>
-              <em class="text-white-50">Illustrator: Faula Mulyani</em>
+            <h6 class="mb-1 fw-bold">Penerapan Pola Distribusi Irigasi Pipa dan Pompa Benam Bertenaga Surya di Desa Ngebong, Kabupaten Tulungagung</h6>
+            <p class="mb-1 text-subtitle">Implementation of Solar-Powered Submersible Pump and Pipe Irrigation Distribution System in Ngebong Village, Tulungagung Regency</p>
+            <p class="mb-0 text-credit text-light mt-2">
+              Darmanto, S.T., M.T. & Prof. Dr. Ir. Sukardi, MS.<br>
+              <em class="text-white-50">Illustrator: Oreza Yans Aprilia</em>
             </p>
           </div>
         </div>
@@ -21,8 +21,6 @@
       </div>
 
       <div class="col-12 col-lg-4 d-flex align-items-center justify-content-center right-panel">
-        
-        <div class="siam-watermark"></div>
 
         <div class="login-container px-4 px-md-5 w-100">
           
@@ -52,13 +50,10 @@
 </template>
 
 <style scoped>
-/* Left Panel (Illustration) */
+/* Left Panel (Placeholder Background) */
 .left-panel {
-  /* Replace with your actual illustration path */
-  background-image: url('@/assets/images/illustration.jpg'); 
-  background-size: cover;
-  background-position: center;
   position: relative;
+  background-color: #6c757d; /* Standard slate gray placeholder color */
 }
 
 /* Info Card Overlay */
@@ -66,56 +61,52 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #0a0a0a;
-  max-width: 450px;
-  border-radius: 4px; /* Optional: adds a slight curve if desired */
+  background-color: rgba(10, 10, 10, 0.9); 
+  max-width: 650px; 
+  border-radius: 4px; 
 }
 
-.qr-code {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+/* QR Placeholder */
+.qr-placeholder {
+  width: 90px;
+  height: 90px;
+  background-color: #e9ecef; /* Light gray box */
+  border-radius: 4px;
+  flex-shrink: 0; 
+}
+
+.text-primary {
+  color: #0d6efd;
+  size: 0.9rem;
 }
 
 .text-subtitle {
   font-size: 0.85rem;
+  line-height: 1.2;
 }
 
 .text-credit {
   font-size: 0.75rem;
+  line-height: 1.4;
 }
 
 /* Right Panel (Login Area) */
 .right-panel {
   position: relative;
-  background-color: #ffffff;
-  overflow: hidden; /* Ensures watermark doesn't spill out */
-}
-
-/* The Faint Background Watermark */
-.siam-watermark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Replace with your actual watermark pattern path */
-  background-image: url('@/assets/images/watermark-pattern.png');
+  background-image: url('@/assets/images/bg-onboard.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.05; /* Adjust this to make it more/less visible */
-  z-index: 1;
-  pointer-events: none; /* Prevents the watermark from blocking clicks */
+}
+
+.siam-logo {
+  width: 210px;
+  height: 60px;
 }
 
 /* Login Content Container */
 .login-container {
-  z-index: 2; /* Keeps the form above the watermark */
+  z-index: 2; 
   max-width: 400px;
-}
-
-.siam-logo {
-  max-width: 180px;
 }
 
 .siam-instruction {
@@ -125,12 +116,12 @@
 
 /* Custom Button Styling */
 .btn-siam {
-  background-color: #0d6efd; /* UB primary blue */
+  background-color: #0d6efd; 
   border: none;
   transition: background-color 0.2s ease-in-out;
 }
 
 .btn-siam:hover {
-  background-color: #0b5ed7; /* Slightly darker on hover */
+  background-color: #0b5ed7; 
 }
 </style>
