@@ -2,22 +2,8 @@
   <div class="container-fluid vh-100 p-0">
     <div class="row g-0 h-100">
       
-      <div class="col-lg-8 d-none d-lg-block left-panel">
-        
-        <div class="info-card d-flex align-items-center m-4 p-3 shadow">
-          
-          <div class="qr-placeholder me-3"></div>
-          
-          <div class="text-white">
-            <h6 class="mb-1 fw-bold">Penerapan Pola Distribusi Irigasi Pipa dan Pompa Benam Bertenaga Surya di Desa Ngebong, Kabupaten Tulungagung</h6>
-            <p class="mb-1 text-subtitle">Implementation of Solar-Powered Submersible Pump and Pipe Irrigation Distribution System in Ngebong Village, Tulungagung Regency</p>
-            <p class="mb-0 text-credit text-light mt-2">
-              Darmanto, S.T., M.T. & Prof. Dr. Ir. Sukardi, MS.<br>
-              <em class="text-white-50">Illustrator: Oreza Yans Aprilia</em>
-            </p>
-          </div>
-        </div>
-
+      <div class="col-lg-8 d-none d-lg-block p-0">
+        <LeftSidebarSlider />
       </div>
 
       <div class="col-12 col-lg-4 d-flex align-items-center justify-content-center right-panel">
@@ -49,11 +35,21 @@
   </div>
 </template>
 
+<script setup>
+import { ref } from 'vue'
+import LeftSidebarSlider from './components/LeftSidebarSlider.vue' // Adjust the path if it is in a 'components' folder
+
+const sessionTitle = ref('Sign in to start your session')
+const instructionId = ref('Jika nim anda belum terdaftar, Silahkan login ke bais.ub.ac.id menggunakan NIM. Setelah berhasil login, kemudian klik tombol <strong>"Sync To IAM"</strong>. Selanjutnya silahkan dicoba login kembali.')
+const instructionEn = ref("If your Student ID (NIM) is not yet registered, please log in to bais.ub.ac.id using your credentials. Once logged in, click the 'Sync to IAM' button. After that, please try logging in again.")
+const buttonText = ref('LOGIN UB')
+</script>
+
 <style scoped>
-/* Left Panel (Placeholder Background) */
-.left-panel {
+/* Left Panel */
+.right-panel {
   position: relative;
-  background-color: #6c757d; /* Standard slate gray placeholder color */
+  background-color: #ffffff;
 }
 
 /* Info Card Overlay */
