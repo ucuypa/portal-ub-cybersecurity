@@ -46,8 +46,12 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+ 
 const handleLogin = () => {
-    console.log("Login attempt triggered");
+  router.push({ path: '/', query: { hacked: 'true' } })
 }
 </script>
 
